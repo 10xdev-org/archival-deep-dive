@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <Hero
-        videoSrc={"./background.mp4"}
+        videoSrc={"./screensaver.mp4"}
         overlayOpts={{
           leftSize: { height: 0, width: 0 },
           rightSize: { height: 0, width: 0 },

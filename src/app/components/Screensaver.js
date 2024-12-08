@@ -46,8 +46,13 @@ const Screensaver = ({ idleTimeout = 100000 }) => {
           />
           {/* Overlay */}
           {/* Main Title */}
-          <h1 className="absolute text-center left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 text-6xl font-bold text-gray-900">
+          <h1 className="absolute text-center left-1/2 top-1/4 transform -translate-x-1/2 -translate-y-1/2 text-6xl font-bold text-gray-900">
             Archival <span className="text-yellow-500">Deep-dive</span>
+          </h1>
+          <h1 className="absolute text-center left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 text-6xl font-bold text-gray-900">
+            <button className="text-4xl mt-10 px-10 py-6 bg-black bg-opacity-70 border-2 border-yellow-500 text-yellow-500 rounded-lg">
+              Tap to Start
+            </button>
           </h1>
         </div>
       )}

@@ -4,23 +4,23 @@ const path = require("path");
 let mainWindow;
 
 app.on("ready", () => {
+  // Create the main window
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    fullscreen: true, // Open in full-screen mode
+    resizable: false, // Prevent resizing
+    frame: false, // Remove default window frame (close/minimize/maximize buttons)
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
     },
   });
 
-  const isDev = process.env.NODE_ENV === "development";
+  mainWindow.loadFile(path.join(__dirname, "out/index.html"));
 
-  if (isDev) {
-    mainWindow.loadURL("http://localhost:3000");
-  } else {
-    mainWindow.loadFile(path.join(__dirname, "out/index.html"));
-  }
+  // Completely disable the menu bar
+  mainWindow.setMenuBarVisibility(false);
 
+  // Handle window close
   mainWindow.on("closed", () => {
     mainWindow = null;
   });

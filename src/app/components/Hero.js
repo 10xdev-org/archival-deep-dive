@@ -23,7 +23,7 @@ const Hero = ({ videoSrc, isFocused, overlayOpts = {} }) => {
   return (
     <section className="hero-section fixed inset-0 h-screen overflow-hidden">
       <video
-        className="w-full h-full object-cover opacity-30"
+        className="w-full h-full object-cover opacity-100"
         src={videoSrc}
         autoPlay
         loop

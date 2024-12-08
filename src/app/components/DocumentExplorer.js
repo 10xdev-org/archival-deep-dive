@@ -60,9 +60,9 @@ export default function DocumentExplorer({ initialFolderStructure }) {
 
   return (
     <div className="min-h-screen h-full w-full p-12 relative">
-      <div className="p-6 bg-gray-200 bg-opacity-50 backdrop-blur-3xl rounded-lg mx-6 mt-6 z-10 h-full">
+      <div className="p-6 bg-transparent bg-opacity-50 backdrop-blur-3xl rounded-lg mx-6 mt-6 z-10 h-full">
         {/* Page Header */}
-        <h1 className="text-left text-3xl font-semibold mb-6 text-gray-800">
+        <h1 className="text-left text-3xl font-semibold mb-6 text-gray-100">
           Archival Deep Dive
         </h1>
 
@@ -73,7 +73,7 @@ export default function DocumentExplorer({ initialFolderStructure }) {
               setPath([initialFolderStructure.name]);
               setCurrentFolder(initialFolderStructure);
             }}
-            className="cursor-pointer text-blue-600 hover:underline"
+            className="cursor-pointer text-blue-300 hover:underline"
           >
             Home
           </span>
@@ -81,7 +81,7 @@ export default function DocumentExplorer({ initialFolderStructure }) {
             <span
               key={idx}
               onClick={() => handleBreadcrumbClick(idx + 1)}
-              className="cursor-pointer text-blue-600 hover:underline ml-2"
+              className="cursor-pointer text-blue-300 hover:underline ml-2"
             >
               {" / "}
               {crumb}
@@ -98,7 +98,7 @@ export default function DocumentExplorer({ initialFolderStructure }) {
                 <div
                   key={folder.name}
                   onClick={() => handleFolderClick(folder)}
-                  className="flex flex-col items-center justify-center bg-gray-100 border border-gray-300 rounded-lg p-4 cursor-pointer hover:bg-blue-200"
+                  className="flex flex-col items-center justify-center bg-blue-200 border-gray-300 border-4 rounded-lg p-4 cursor-pointer hover:bg-blue-300"
                 >
                   <img
                     src={folder.thumbnail || defaultFolderIconSrc}

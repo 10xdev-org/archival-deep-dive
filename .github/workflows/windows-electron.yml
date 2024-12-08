@@ -1,46 +1,41 @@
-name: Build Electron App
+name: Build Electron Installer
 
 on:
   push:
     branches:
       - main
   pull_request:
-    branches:
-      - main
 
 jobs:
-  build:
+  build-installer:
     runs-on: windows-latest
 
     steps:
-      # Checkout the repository
+      # Checkout repository
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Setup Node.js environment
+      # Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18" # Use a version compatible with your project
+          node-version: 18
 
       # Install dependencies
       - name: Install Dependencies
         run: npm install
 
-      # Build Next.js app
-      - name: Build Next.js App
+      # Build the Next.js app
+      - name: Build Next.js
         run: npm run build
 
-      # Package Electron app
-      - name: Install Electron Packager
-        run: npm install electron-packager --save-dev
+      # Package the Electron app and create an installer
+      - name: Create Installer
+        run: npm run make-installer
 
-      - name: Package Electron App
-        run: npx electron-packager . MyApp --platform=win32 --arch=x64 --out=dist --overwrite
-
-      # Upload `.exe` as a build artifact
-      - name: Upload Build Artifact
+      # Upload the installer artifact
+      - name: Upload Installer
         uses: actions/upload-artifact@v3
         with:
-          name: MyApp-windows
-          path: dist/MyApp-win32-x64/
+          name: ArchivalDeepDive-installer
+          path: dist/
