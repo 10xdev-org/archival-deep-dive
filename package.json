@@ -2,12 +2,14 @@
   "name": "Archival-deep-dive",
   "version": "0.1.0",
   "private": true,
+  "main": "electron.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && next export",
+    "start": "electron .",
     "lint": "next lint",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "package": "electron-packager . ArchivalDeepDive --platform=win32 --arch=x64 --out=dist --overwrite"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
@@ -23,6 +25,8 @@
   "devDependencies": {
     "@tauri-apps/api": "^2.1.1",
     "@tauri-apps/cli": "^2.1.0",
+    "electron": "^26.1.0",
+    "electron-packager": "^17.1.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
     "postcss": "^8",

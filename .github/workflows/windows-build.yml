@@ -3,7 +3,7 @@ name: Windows Build Tauri App
 on:
   push:
     branches:
-      - main
+      - mainzdzsd
 
 permissions:
   contents: write
