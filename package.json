@@ -5,7 +5,7 @@
   "main": "electron.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "electron .",
     "lint": "next lint",
     "tauri": "tauri",
